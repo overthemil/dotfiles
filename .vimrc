@@ -72,3 +72,9 @@ imap <F2> <ESC>:w<CR>i
 " FZF and RipGrep keybinds
 nnoremap <C-p> :Files<Cr> 
 nnoremap <C-g> :Rg<Cr>
+
+" fswitch keybindings
+" Switch to the file and load it into the current window >
+nmap <silent> <F3> :FSHere<cr>
+" Switch to the file and load it into a new window split on the right >
+nmap <silent> <F4> :FSSplitRight<cr>
