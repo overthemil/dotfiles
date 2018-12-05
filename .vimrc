@@ -64,9 +64,3 @@ set tabstop=4 shiftwidth=4 expandtab
 nmap <F2> :w<CR>
 " in insert mode F2 will exit insert, save, enters insert again
 imap <F2> <ESC>:w<CR>i
-" switch between header/source with F4
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-" create doxygen comment
-map <F6> :Dox<CR>
-" goto definition with F12
-map <F12> <C-]>
