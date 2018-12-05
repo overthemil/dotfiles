@@ -16,15 +16,22 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Valloric/YouCompleteMe'
 " Use snips in vim
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Searching
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
+" Switch between companion files (ex: .h and .c)
+Plug 'derekwyatt/vim-fswitch'
+
+" Vim session manager
+" Plugin 'tpope/vim-obsession' | Plugin 'dhruvasagar/vim-prosession'
 call plug#end()
 
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="c-<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Remove <tab> keybinding from YouCompleteMe so it doesn't interfere with snips
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -36,9 +43,6 @@ set background=dark
 " 'matchit.vim' is built-in so let's enable it!
 " Hit '%' on 'if' to jump to 'else'.
 runtime macros/matchit.vim
-
-" Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
-let g:DoxygenToolkit_authorName="John Doe <john@doe.com>"
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -64,3 +68,7 @@ set tabstop=4 shiftwidth=4 expandtab
 nmap <F2> :w<CR>
 " in insert mode F2 will exit insert, save, enters insert again
 imap <F2> <ESC>:w<CR>i
+
+" FZF and RipGrep keybinds
+nnoremap <C-p> :Files<Cr> 
+nnoremap <C-g> :Rg<Cr>
