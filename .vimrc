@@ -20,6 +20,8 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 " Switch between companion files (ex: .h and .c)
 Plug 'derekwyatt/vim-fswitch'
+" Create a wiki
+Plug 'vimwiki/vimwiki'
 
 " Vim session manager
 " Plugin 'tpope/vim-obsession' | Plugin 'dhruvasagar/vim-prosession'
@@ -54,6 +56,7 @@ set number                      " Turn line numbers on
 set autoindent                  " Minimal automatic indenting for any filetype.
 set backspace=indent,eol,start  " Proper backspace behavior.
 set showmatch                   " Highlight matching braces
+set showcmd                     " Notify command key being pressed
 set hidden                      " Possibility to have more than one
                                 " unsaved buffers.
 set incsearch                   " Incremental search, hit '<CR>' to stop.
