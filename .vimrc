@@ -66,6 +66,11 @@ set wildmenu                    " Great command-line completion, use '<Tab>' to
                                 " move around and '<CR>' to validate.
 set tabstop=4 shiftwidth=4 expandtab
 
+" Required by vimwiki
+set nocompatible
+filetype plugin on
+syntax on
+
 " Function keys shortcuts
 " in normal mode F2 will save the file
 nmap <F2> :w<CR>
