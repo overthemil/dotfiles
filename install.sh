@@ -12,3 +12,4 @@ then
 	ln -s $FOLDER/.tmux.conf ~/.tmux.conf
 fi
 
+echo "Dot files installed. Install YCM manually in the ~/.vim/plugged/ dir."
