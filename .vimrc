@@ -22,7 +22,8 @@ Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'derekwyatt/vim-fswitch'
 " Create a wiki
 Plug 'vimwiki/vimwiki'
-
+" Add support for writing LaTeX documents
+Plug 'lervag/vimtex'
 " Vim session manager
 " Plugin 'tpope/vim-obsession' | Plugin 'dhruvasagar/vim-prosession'
 call plug#end()
