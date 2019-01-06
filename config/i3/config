@@ -167,7 +167,7 @@ bindsym $mod+p exec /home/pedro/Documents/dotfiles/scripts/i3lock_script.sh
 
 for_window [class=".*"] border pixel 1
 for_window [class=".*"] title_format "    %title"
-gaps inner 10
+gaps inner 5
 smart_gaps on
 smart_borders on
 
@@ -206,9 +206,11 @@ bar {
 assign [class="Chromium"] $ws3
 #assign [class="Spotify"] $ws10 - Stopped working for some reason 
 for_window [class="Spotify"] move to workspace $ws10
+assign [class="Slack"] $ws9 
 
 exec urxvt
 exec chromium
 exec spotify
+exec slack
 exec_always compton
 exec_always feh --bg-scale /home/pedro/.wallpaper
