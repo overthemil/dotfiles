@@ -24,6 +24,8 @@ Plug 'derekwyatt/vim-fswitch'
 Plug 'vimwiki/vimwiki'
 " Add support for writing LaTeX documents
 Plug 'lervag/vimtex'
+" Syntax colouring of hex codes and colour names
+Plug 'chrisbra/Colorizer'
 " Vim session manager
 " Plugin 'tpope/vim-obsession' | Plugin 'dhruvasagar/vim-prosession'
 call plug#end()
