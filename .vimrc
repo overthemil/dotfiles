@@ -60,6 +60,7 @@ set autoindent                  " Minimal automatic indenting for any filetype.
 set backspace=indent,eol,start  " Proper backspace behavior.
 set showmatch                   " Highlight matching braces
 set showcmd                     " Notify command key being pressed
+set clipboard=unnamed           " All yanks and deletes go to * register
 set hidden                      " Possibility to have more than one
                                 " unsaved buffers.
 set incsearch                   " Incremental search, hit '<CR>' to stop.
