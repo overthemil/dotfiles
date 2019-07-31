@@ -36,6 +36,4 @@ makepkg -si;
 cd ..
 trizen -S ttf-font-awesome-4;
 
-python ~/.vim/plugged/YouCompleteMe/install.py;
-
 source ~/.bashrc;

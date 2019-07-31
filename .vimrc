@@ -5,41 +5,26 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Install Vim Plugins
+" Vim Plugins
 call plug#begin('~/.vim/plugged')
-
 " Dark theme for vim
 Plug 'dracula/vim',{'as':'dracula'}
 " Language pack
 Plug 'sheerun/vim-polyglot'
-" Code completion
-Plug 'Valloric/YouCompleteMe'
-" Use snips in vim
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" Searching
-Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
-" Switch between companion files (ex: .h and .c)
-Plug 'derekwyatt/vim-fswitch'
-" Create a wiki
-Plug 'vimwiki/vimwiki'
-" Add support for writing LaTeX documents
-Plug 'lervag/vimtex'
 " Syntax colouring of hex codes and colour names
 Plug 'chrisbra/Colorizer'
-" Vim session manager
-" Plugin 'tpope/vim-obsession' | Plugin 'dhruvasagar/vim-prosession'
+" Auto code completion
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Full path fuzzy file finder
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+" Multiple selection feature
+Plug 'terryma/vim-multiple-cursors'
+" File directory viewer
+Plug 'scrooloose/nerdtree'
+" Async linting support
+Plug 'dense-analysis/ale'
 call plug#end()
-
-let g:UltiSnipsExpandTrigger="c-<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" Remove <tab> keybinding from YouCompleteMe so it doesn't interfere with snips
-" let g:ycm_key_list_select_completion=[]
-" let g:ycm_key_list_previous_completion=[]
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " Colour details
 set t_Co=256
@@ -56,37 +41,48 @@ set termencoding=utf-8
 
 " Various settings
 set number                      " Turn line numbers on
-set autoindent                  " Minimal automatic indenting for any filetype.
-set backspace=indent,eol,start  " Proper backspace behavior.
+set autoindent                  " Copy the indentation from the previous line 
+set backspace=indent,eol,start  " Allows backspace to remove indents, EOL, etc.
 set showmatch                   " Highlight matching braces
 set showcmd                     " Notify command key being pressed
-set clipboard=unnamed           " All yanks and deletes go to * register
-set hidden                      " Possibility to have more than one
-                                " unsaved buffers.
-set incsearch                   " Incremental search, hit '<CR>' to stop.
-set ruler                       " Shows the current line number at the bottom.
-                                " right of the screen.
+set clipboard=unnamed           " All yanks and deletes go to * (on-select) register
+set hidden                      " Allows Vim to abandon a buffer even with unsaved changes 
+set incsearch                   " Incremental search, hit CR to stop
+set ruler                       " Shows the current line number at the bottom right.
 set wildmenu                    " Great command-line completion, use '<Tab>' to
                                 " move around and '<CR>' to validate.
+set wildmode=longest:list,full  " First '<Tab>' will compleste to the longest common string first
 set tabstop=4 shiftwidth=4 expandtab
+
+" Syntax highlighting
+syntax on 
+filetype plugin on
 
 " Required by vimwiki
 set nocompatible
-filetype plugin on
-syntax on
+
+" Remap jj to Escape
+inoremap jj <Esc>
 
 " Function keys shortcuts
 " in normal mode F2 will save the file
 nmap <F2> :w<CR>
 " in insert mode F2 will exit insert, save, enters insert again
 imap <F2> <ESC>:w<CR>i
+" Open NERDTree
+map <F3> :NERDTreeToggle<CR>
+" Swap between headers and source files
+nnoremap <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
-" FZF and RipGrep keybinds
-nnoremap <C-p> :Files<Cr> 
-nnoremap <C-g> :Rg<Cr>
+" FZF
+nnoremap <leader>f :Files<cr>
 
-" fswitch keybindings
-" Switch to the file and load it into the current window >
-nmap <silent> <F3> :FSHere<cr>
-" Switch to the file and load it into a new window split on the right >
-nmap <silent> <F4> :FSSplitRight<cr>
+" NERDTree
+" Close Vim if only NERDTree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ALE
+" Go to definition
+noremap <leader>z :ALEGoToDefinition<CR>
+" Find references
+noremap <leader>x :ALEFindReferences<CR>
