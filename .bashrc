@@ -20,7 +20,8 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
 # Allow piping into xclip
-alias copy='xclip -sel clip'
+alias c='xclip -i -selection clipboard'
+alias v='xclip -o'
 
 ####################################################################
 # FZF
