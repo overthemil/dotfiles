@@ -23,6 +23,9 @@ alias .5='cd ../../../../..'
 alias c='xclip -i -selection clipboard'
 alias v='xclip -o'
 
+# Stop annoying ksshaskpass windows from popping up
+unset SSH_ASKPASS
+
 ####################################################################
 # FZF
 ####################################################################
