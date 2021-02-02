@@ -203,12 +203,12 @@ bar {
     }
 }
 
-#assign [class="Chromium"] $ws3
+assign [class="Firefox"] $ws3
 #assign [class="Spotify"] $ws10 - Stopped working for some reason 
-#for_window [class="Spotify"] move to workspace $ws10
+for_window [class="Spotify"] move to workspace $ws10
 #assign [class="Slack"] $ws9 
 
-exec urxvt
+#exec urxvt
 #exec chromium
 #exec spotify
 #exec slack

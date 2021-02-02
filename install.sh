@@ -5,7 +5,7 @@ FOLDER=$(pwd)
 # Ensure git, base and base-devel are already installed
 pacman -S xorg-server xorg-xinit i3-gaps i3status i3-wm dunst i3lock i3blocks python-pywal
 pacman -S compton feh rxvt-unicode xclip rofi xsettingsd lxappearance scrot viewnior imagemagick ttf-dejavu ranger
-pacman -S vim neovim tmux
+pacman -S vim neovim tmux firefox
 
 # Install the AUR Helper, yay, before continuing
 # git clone https://aur.archlinux.org/yay.git
