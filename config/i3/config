@@ -203,7 +203,7 @@ bar {
     }
 }
 
-assign [class="Firefox"] $ws3
+assign [class="firefox"] $ws3
 #assign [class="Spotify"] $ws10 - Stopped working for some reason 
 for_window [class="Spotify"] move to workspace $ws10
 #assign [class="Slack"] $ws9 
