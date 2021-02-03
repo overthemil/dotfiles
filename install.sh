@@ -31,7 +31,7 @@ pacman --needed -S i3-gaps i3status i3-wm i3lock i3blocks
 pacman --needed -S dunst python-pywal compton feh rxvt-unicode xclip rofi xsettingsd 
 pacman --needed -S lxappearance scrot viewnior imagemagick ttf-dejavu ranger
 # Apps
-pacman --neded -S tmux firefox
+pacman --needed -S tmux firefox
 
 # Install the AUR Helper, yay.
 [ ! -d 'yay' ] && $RUN_AS_USER  git clone https://aur.archlinux.org/yay.git
