@@ -7,8 +7,8 @@ endif
 
 " Vim Plugins
 call plug#begin('~/.vim/plugged')
-" Dark theme for vim
-Plug 'dracula/vim',{'as':'dracula'}
+" Theme for vim
+Plug 'arcticicestudio/nord-vim'
 " Language pack
 Plug 'sheerun/vim-polyglot'
 " Syntax colouring of hex codes and colour names
@@ -21,7 +21,7 @@ call plug#end()
 
 " Colour details
 set t_Co=256
-set background=dark
+colorscheme nord
 
 " 'matchit.vim' is built-in so let's enable it!
 " Hit '%' on 'if' to jump to 'else'.
