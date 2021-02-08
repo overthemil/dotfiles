@@ -21,6 +21,3 @@ alias .5='cd ../../../../..'
 # Allow piping into xclip
 alias c='xclip -i -selection clipboard'
 alias v='xclip -o'
-
-# Setup pywal
-(cat ~/.cache/wal/sequences &)
