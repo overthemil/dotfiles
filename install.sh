@@ -26,6 +26,7 @@ cp -v $FOLDER/bashrc $HOME/.bashrc
 cp -v $FOLDER/vimrc $HOME/.vimrc
 cp -v $FOLDER/tmux.conf $HOME/.tmux.conf
 cp -v $FOLDER/wallpaper.png $HOME/.wallpaper
+cp -v $FOLDER/dir_colors $HOME/.dir_colors
 
 gsettings set org.gnome.desktop.background picture-uri file://$HOME/.wallpaper
 
