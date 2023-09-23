@@ -53,7 +53,7 @@ kitty +kitten themes --reload-in=all Catppuccin-Mocha && exit
 git clone https://github.com/skrewby/kickstart.nvim.git $HOME/.config/nvim
 nvim --headless "+Lazy! sync" +qa
 
-exec bash
+source "$HOME/.cargo/env"
 rustup component add rust-analyzer
 
 echo "                            "
