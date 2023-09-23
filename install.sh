@@ -59,8 +59,8 @@ $(chsh -s $(which zsh))
 
 kitty +kitten themes --reload-in=all Catppuccin-Mocha
 
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-cp -r $FOLDER/nvim $HOME/.config/nvim/lua/custom/
+git clone https://github.com/skrewby/kickstart.nvim.git $HOME/.config/nvim
+nvim --headless "+Lazy! sync" +qa
 
 rustup component add rust-analyzer
 
