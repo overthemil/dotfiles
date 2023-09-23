@@ -50,7 +50,7 @@ $(chsh -s $(which zsh))
 
 kitty +kitten themes --reload-in=all Catppuccin-Mocha && exit
 
-git clone https://github.com/skrewby/kickstart.nvim.git $HOME/.config/nvim
+git clone git@github.com:skrewby/kickstart.nvim.git $HOME/.config/nvim
 nvim --headless "+Lazy! sync" +qa
 
 source "$HOME/.cargo/env"
